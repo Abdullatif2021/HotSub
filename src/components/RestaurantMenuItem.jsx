@@ -18,8 +18,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
     <>
       <div
         onClick={() => setActiveIndex(index)}
-        className='flex cursor-pointer justify-between items-center p-4 my-2 rounded-md bg-gray-50 select-none'
-      >
+        className='flex cursor-pointer justify-between items-center p-4 my-2 rounded-md bg-gray-50 select-none'>
         <h3 className='text-lg font-semibold'>{items.card.card.title}</h3>
         <button>
           {activeIndex === index ? (
@@ -39,8 +38,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
             return (
               <li
                 className='p-2 py-8 flex gap-4 md:gap-8 justify-between items-center border-b'
-                key={i}
-              >
+                key={i}>
                 <div className='basis-8/12 space-y-2'>
                   <h2 className='text-base font-semibold'>
                     {item?.card?.info?.name}
@@ -59,8 +57,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
                   />
                   <button
                     onClick={() => handleAddToCart({ ...item, itemPrice })}
-                    className='bg-white text-orange-500 hover:bg-orange-500 hover:text-white font-bold p-2 px-6 rounded-md absolute shadow-md left-[50%] -bottom-5 -translate-x-[50%]'
-                  >
+                    className='bg-white text-orange-500 hover:bg-orange-500 hover:text-white font-bold p-2 px-6 rounded-md absolute shadow-md left-[50%] -bottom-5 -translate-x-[50%]'>
                     ADD
                   </button>
                 </div>
