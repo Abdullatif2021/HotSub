@@ -8,6 +8,7 @@ import {
 import { useState } from 'react';
 
 const BannerList = ({ isLoading, banners }) => {
+  console.log('BannerList', { isLoading, banners });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({
     mode: 'free',
@@ -43,8 +44,7 @@ const BannerList = ({ isLoading, banners }) => {
             <button
               disabled={currentSlide === 0}
               onClick={() => instanceRef.current?.prev()}
-              className='bg-gray-100 p-2 rounded-full disabled:text-gray-300'
-            >
+              className='bg-gray-100 p-2 rounded-full disabled:text-gray-300'>
               <ArrowLongLeftIcon className='w-4 h-4' />{' '}
             </button>
             <button
@@ -53,8 +53,7 @@ const BannerList = ({ isLoading, banners }) => {
                 instanceRef?.current?.track?.details?.slides?.length - 1
               }
               onClick={() => instanceRef.current?.next()}
-              className='bg-gray-100 p-2 rounded-full disabled:text-gray-300'
-            >
+              className='bg-gray-100 p-2 rounded-full disabled:text-gray-300'>
               <ArrowLongRightIcon className='w-4 h-4' />{' '}
             </button>
           </div>
@@ -69,7 +68,7 @@ const BannerList = ({ isLoading, banners }) => {
         </div>
       ) : (
         <div ref={sliderRef} className='keen-slider'>
-          {banners.card.card.gridElements.infoWithStyle.info.map((banner) => (
+          {banners.card.gridElements.infoWithStyle.info.map((banner) => (
             <Banner banner={banner} key={banner.id} />
           ))}
         </div>
