@@ -30,6 +30,10 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
+        path: 'home',
+        element: <Home />,
+      },
+      {
         path: 'about',
         element: <About />,
       },
@@ -67,8 +71,7 @@ root.render(
     clientId={process.env.REACT_APP_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
-    }}
-  >
+    }}>
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
